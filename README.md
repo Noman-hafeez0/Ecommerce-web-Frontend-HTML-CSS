@@ -24,5 +24,5 @@ Author - Noman Hafeez
 
 Ecommerce-web-Frontend-HTML-CSS/
 │
-\n├── index.html
-\n├── style.css
+├── index.html  
+├── style.css
