@@ -22,7 +22,7 @@ Author - Noman Hafeez
 
 ## 📁 Folder Structure
 
-Ecommerce-web-Frontend-HTML-CSS/
-│
+Ecommerce-web-Frontend-HTML-CSS/  
+│  
 ├── index.html  
 ├── style.css
