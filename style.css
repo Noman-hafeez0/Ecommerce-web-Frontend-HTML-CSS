@@ -1,303 +1,359 @@
-body {
-    padding: 0;
-    margin: 0;
-    background-color: white;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 a {
-    text-decoration: none;
-}
-
-#head {
-    position: fixed;
-    height: 70px;
-    width: 100%;
-    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
-    top: 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
 }
 
 
+body {
+  display: grid;
+  width: 100%;
+  min-height: 100vh;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas:
+    "head head head head head"
+    "nav nav nav nav nav"
+    "cats con2 con2 con2 con2"
+    "banner banner banner banner banner"
+    "con3 con3 con3 con3 con3"
+    "con4 con4 con4 con4 con4"
+    "con5 con5 con5 con5 con5"
+    "footer footer footer footer footer"
+    ;
+  row-gap: 20px;
+}
 
-
-
-#logotxt {
-    font-family: 'Playfair Display', serif;
-    margin-left: 120px;
+#header {
+  grid-area: head;
+  grid-column: 1 / span 5;
+  grid-row: 1 / 2;
+  width: 100%;
+  max-width: auto;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+  background: linear-gradient(to right, #f5f2f0, #dfd3c3);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+  font-family: 'Cormorant Garamond', serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 #logo {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 25px;
-    color: #ff7300;
-    font-weight: 600;
+  font-size: 28px;
+  font-weight: 700;
+  color: #d77d33;
+  font-family: 'Playfair Display', serif;
+  transition: all 0.3s ease-in-out;
 }
+
 #logo:hover {
-    color: #a14e0a;
+  color: #a14e0a;
+  text-shadow: 1px 1px 2px #8e8e8e50;
+}
+
+#logotxt {
+  margin-left: 20px;
+  font-size: 20px;
+  font-weight: 900;
+  color: #2b2b2b;
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 1px;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .search-box {
-    position: relative;
+  border-radius: 10px;
+  height: 30px;
+  align-content: center;
+  justify-content: center;
+
+
+}
+
+.search-box {
+  position: relative;
 }
 
 .search-box input {
-    height: 36px;
-    width: 220px;
-    padding: 0 40px 0 15px;
-    border: none;
-    border-radius: 20px;
-    color: #000000;
-    font-size: 14px;
-    font-family: 'Segoe UI', sans-serif;
-    transition: 0.3s ease;
-    box-shadow: inset 0 0 3px rgba(55, 55, 55, 0.4);
+  height: 36px;
+  width: 220px;
+  padding: 0 40px 0 15px;
+  border: none;
+  border-radius: 20px;
+  color: #000000;
+  font-size: 14px;
+  font-family: 'Segoe UI', sans-serif;
+  transition: 0.3s ease;
+  box-shadow: inset 0 0 3px rgba(55, 55, 55, 0.4);
 }
 
 .search-box input::placeholder {
-    color: #2f2f2f;
-    font-style: italic;
+  color: #2f2f2f;
+  font-style: italic;
 }
 
 .search-box input:focus {
-    outline: none;
-    box-shadow: 0 0 8px rgba(52, 52, 52, 0.6);
+  outline: none;
+  box-shadow: 0 0 8px rgba(52, 52, 52, 0.6);
 }
 
-/* Search Icon */
 .search-box i {
-    position: absolute;
-    right: 12px;
-    top: 10px;
-    color: #323232;
-    font-size: 16px;
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  color: #323232;
+  font-size: 16px;
 }
+
 
 .navbar {
-    display: block;
-    text-align: center;
-    justify-content: center;
-    padding: 20px;
-    margin-top: 70px;
+  grid-area: nav;
+  display: block;
+  text-align: center;
 }
 
 .navbar a {
-    font-family: 'Bebas Neue', sans-serif;
-    color: #000000;
-    width: 20px;
-    letter-spacing: 3px;
-    text-decoration: none;
-    margin-left: 40px;
-    font-weight: 500;
+  font-family: 'Bebas Neue', sans-serif;
+  color: #000000;
+  width: 20px;
+  letter-spacing: 3px;
+  text-decoration: none;
+  margin-left: 40px;
+  font-weight: 500;
 }
 
 .navbar a:hover {
-    border-bottom: 2px solid black;
+  border-bottom: 2px solid black;
+}
+.container {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+
+  background-color: #25d366;
+  border-radius: 30px;
+  padding: 12px 18px;
+  
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.container {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 1000;
-    background-color: #25d366;
-    border-radius: 20px;
-    padding: 10px 15px;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
+.container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
 .container i {
-    font-size: 24px;
-    color: white;
+  font-size: 24px;
+  color: white;
 }
 
 .container a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
 }
 
 .chat-label span {
-    font-size: 14px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
-
-
-.container1 {
-    display: flex;
-    margin-left: 80px;
-
-
-    width: 80%;
-    height: auto;
-}
 
 #cats {
-    height: 200px;
-    width: 200px;
-    border-radius: 20px;
-    padding: 20px;
-}
-
-.container1 h2 {
-    font-family: "Futura", "Trebuchet MS", Arial, sans-serif;
+  grid-area: cats;
+  height: 200px;
+  width: 200px;
+  border-radius: 20px;
+  padding: 20px;
 }
 
 #cats a {
-    color: #000000;
-    display: block;
-    text-align: left;
-    padding-left: 10px;
-    margin-bottom: 8px;
-    font-size: 15px;
-    text-decoration: none;
-    transition: 0.3s;
+  color: #000000;
+  display: block;
+  text-align: left;
+  padding-left: 10px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 #cats a:hover {
-    color: grey;
-    padding-left: 15px;
+  color: grey;
+  padding-left: 15px;
 }
 
 .container2 {
-    margin-left: 40px;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
+  grid-area: con2;
+  margin-left: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
 }
 
 
 
 .box {
-    height: 400px;
-    margin: 20px;
+  height: 400px;
+  margin: 20px;
 }
 
 .imgs {
-    display: flex;
-    justify-content: space-around;
-    background-color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  background-color: #ffffff;
 }
 
 .box span,
 p {
-    margin-bottom: 50px;
-    color: #000000;
-    font-weight: 300;
-    font-family: 'Futura', sans-serif;
-    font-size: 15px;
-    padding: 10px;
+  margin-bottom: 50px;
+  color: #000000;
+  font-weight: 300;
+  font-family: 'Futura', sans-serif;
+  font-size: 15px;
+  padding: 10px;
 }
 
 .box p {
-    font-size: 20px;
-    font-weight: 700;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 #preprice {
-    text-decoration: line-through rgb(255, 84, 84);
+  text-decoration: line-through rgb(255, 84, 84);
 }
 
 .container2 .img {
-    height: 250px;
-    width: 200px;
+  height: 250px;
+  width: 200px;
 
 }
 
 .container2 h2 {
-    font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .container2 #img1 {
-    background-image: url("https://enemmall.com/cdn/shop/files/WhatsAppImage2025-07-25at3.19.10PM_1.jpg?v=1754125451&width=540");
-    background-size: cover;
+  background-image: url("https://enemmall.com/cdn/shop/files/WhatsAppImage2025-07-25at3.19.10PM_1.jpg?v=1754125451&width=540");
+  background-size: cover;
 }
 
 .container2 #img2 {
-    background-image: url("https://enemmall.com/cdn/shop/files/XM04201_DW5_FNT.jpg?v=1754126519&width=540");
-    background-size: cover;
+  background-image: url("https://enemmall.com/cdn/shop/files/XM04201_DW5_FNT.jpg?v=1754126519&width=540");
+  background-size: cover;
 }
 
 .container2 #img3 {
-    background-image: url("https://enemmall.com/cdn/shop/files/1153553-3.webp?v=1754131262&width=540");
-    background-size: cover;
+  background-image: url("https://enemmall.com/cdn/shop/files/1153553-3.webp?v=1754131262&width=540");
+  background-size: cover;
 }
 
 
 .container2 #img1:hover {
-    background-image: url("https://enemmall.com/cdn/shop/files/6622658red_2.jpg?v=1754125451&width=1800");
+  background-image: url("https://enemmall.com/cdn/shop/files/6622658red_2.jpg?v=1754125451&width=1800");
 }
 
 .container2 #img2:hover {
-    background-image: url("https://enemmall.com/cdn/shop/files/XM04201_DW5_BCK.jpg?v=1754126519&width=1800");
+  background-image: url("https://enemmall.com/cdn/shop/files/XM04201_DW5_BCK.jpg?v=1754126519&width=1800");
 }
 
 .container2 #img3:hover {
-    background-image: url("https://enemmall.com/cdn/shop/files/1153553-2.webp?v=1754131262&width=1800");
+  background-image: url("https://enemmall.com/cdn/shop/files/1153553-2.webp?v=1754131262&width=1800");
 }
 
+.banner {
+  grid-area: banner;
+  width: 100%;
+  margin-top: 100px;
+  height: 550px;
+}
 
 .container3 {
-    width: 95.2%;
-    margin-top: 100px;
-    height: 500px;
-    padding: 30px;
-    background-image: url("https://static.vecteezy.com/system/resources/previews/011/640/737/non_2x/shopping-day-sale-banner-template-design-for-web-or-social-media-vector.jpg");
-    background-size: cover;
+  width: 100%;
+  height: 550px;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/011/640/737/non_2x/shopping-day-sale-banner-template-design-for-web-or-social-media-vector.jpg");
+  background-size: cover;
 }
 
-
-
+.con3 {
+  grid-area: con3;
+}
+.con4 {
+  grid-area: con4;
+}
+.con5 {
+  grid-area: con5;
+}
 
 
 .container2 #img11 {
-    background-image: url("https://enemmall.com/cdn/shop/files/WhatsAppImage2025-07-25at3.19.08PM.jpg?v=1754125415&width=540");
-    background-size: cover;
+  background-image: url("https://enemmall.com/cdn/shop/files/WhatsAppImage2025-07-25at3.19.08PM.jpg?v=1754125415&width=540");
+  background-size: cover;
 }
 
 .container2 #img12 {
-    background-image: url("https://enemmall.com/cdn/shop/files/WhatsAppImage2025-07-25at3.19.09PM_1.jpg?v=1754125418&width=540");
-    background-size: cover;
+  background-image: url("https://enemmall.com/cdn/shop/files/WhatsAppImage2025-07-25at3.19.09PM_1.jpg?v=1754125418&width=540");
+  background-size: cover;
 }
 
 .container2 #img13 {
-    background-image: url("https://enemmall.com/cdn/shop/files/WhatsAppImage2025-07-25at3.19.11PM.jpg?v=1754125411&width=540");
-    background-size: cover;
+  background-image: url("https://enemmall.com/cdn/shop/files/WhatsAppImage2025-07-25at3.19.11PM.jpg?v=1754125411&width=540");
+  background-size: cover;
 }
 
 .container2 #img14 {
-    background-image: url("https://enemmall.com/cdn/shop/files/WhatsAppImage2025-07-25at3.19.08PM_1.jpg?v=1754125448&width=540");
-    background-size: cover;
+  background-image: url("https://enemmall.com/cdn/shop/files/WhatsAppImage2025-07-25at3.19.08PM_1.jpg?v=1754125448&width=540");
+  background-size: cover;
 }
 
 .container2 #img15 {
-    background-image: url("https://enemmall.com/cdn/shop/files/WhatsAppImage2025-07-25at3.19.10PM_1.jpg?v=1754125451&width=540");
-    background-size: cover;
+  background-image: url("https://enemmall.com/cdn/shop/files/WhatsAppImage2025-07-25at3.19.10PM_1.jpg?v=1754125451&width=540");
+  background-size: cover;
 }
 
 .container2 #img11:hover {
-    background-image: url("https://enemmall.com/cdn/shop/files/6622801skn_2.jpg?v=1754125416&width=1800");
+  background-image: url("https://enemmall.com/cdn/shop/files/6622801skn_2.jpg?v=1754125416&width=1800");
 }
 
 .container2 #img12:hover {
-    background-image: url("https://enemmall.com/cdn/shop/files/6622806.jpg?v=1754125418&width=1800");
+  background-image: url("https://enemmall.com/cdn/shop/files/6622806.jpg?v=1754125418&width=1800");
 }
 
 .container2 #img13:hover {
-    background-image: url("https://enemmall.com/cdn/shop/files/6622822blu.jpg?v=1754125411&width=1800");
+  background-image: url("https://enemmall.com/cdn/shop/files/6622822blu.jpg?v=1754125411&width=1800");
 }
 
 .container2 #img14:hover {
-    background-image: url("https://enemmall.com/cdn/shop/files/6622686pup_2.jpg?v=1754125448&width=1800");
+  background-image: url("https://enemmall.com/cdn/shop/files/6622686pup_2.jpg?v=1754125448&width=1800");
 }
 
 .container2 #img15:hover {
-    background-image: url("https://enemmall.com/cdn/shop/files/6622658red_2.jpg?v=1754125451&width=1800");
+  background-image: url("https://enemmall.com/cdn/shop/files/6622658red_2.jpg?v=1754125451&width=1800");
 }
 
 
@@ -395,8 +451,9 @@ p {
     background-image: url("https://enemmall.com/cdn/shop/files/WhatsAppImage2024-12-03at12.32.58PM_1.jpg?v=1754132025&width=1080");
 }
 
-
-
+footer {
+  grid-area: footer;
+}
 
 .container4 {
     font-family: 'Josefin Sans', sans-serif;
@@ -439,4 +496,140 @@ p {
 
 .followicons i {
     font-size: 20px;
+}
+
+
+
+
+@media (max-width: 768px) {
+body {
+  display: grid;
+  width: 100%;
+  min-height: 100vh;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas:
+    "head head head head head"
+    "nav nav nav nav nav"
+    "con2 con2 con2 con2 con2"
+    "banner banner banner banner banner"
+    "con3 con3 con3 con3 con3"
+    "con4 con4 con4 con4 con4"
+    "con5 con5 con5 con5 con5"
+    "footer footer footer footer footer"
+    ;
+  row-gap: 20px;
+}
+ 
+
+  #logo {
+    display: inline-block;
+    text-align: center;
+  }
+
+  #logotxt {
+    display: none;
+  }
+
+  .search-box {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+
+  .navbar {
+
+    font-size: 10px;
+  }
+
+  .imgs {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .box {
+    width: 45%;
+    margin: 10px;
+    height: auto;
+  }
+
+  .container2 .img {
+    width: 100%;
+    height: 200px;
+  }
+
+  #cats {
+    display: none;
+  }
+
+  .container2 {
+    grid-area: con2;
+    margin: 0;
+    padding: 0;
+  }
+
+  
+
+  .container3 {
+    width: 100%;
+    height: 100%;
+    background-image: url("https://marketplace.canva.com/EAE8PexowsI/1/0/400w/canva-shoes-sale-%28banner-%28portrait%29%29-Q9lHV6HDXCs.jpg");
+    background-size: cover;
+  }
+
+  .con3 {
+    grid-area: con3;
+  }
+  .con4 {
+    grid-area: con4;
+  }
+  .con5 {
+    grid-area: con5;
+  }
+  .box span,
+  .box p {
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  .container4 {
+    height: 250px;
+    bottom: o;
+  }
+
+
+  .firbox {
+    font-size: 10px;
+    padding-left: 10px;
+  }
+}
+
+
+
+@media (max-width: 1240px) {
+
+
+
+  #cats {
+    display: none;
+  }
+  .imgs {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+   .box {
+    width: 45%;
+    margin: 10px;
+    height: auto;
+  }
+
+  .container2 .img {
+    width: 100%;
+    height: 200px;
+  }
 }
